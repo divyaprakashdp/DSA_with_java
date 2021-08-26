@@ -7,11 +7,11 @@ public class MergeTwoSortedLists {
 
     public static void main(String[] args) {
 
-        LinkedList<Integer> l1 = new LinkedList<Integer>();
+        LinkedList<Integer> l1 = new LinkedList<>();
         l1.add(1);
         l1.add(2);
         l1.add(4);
-        LinkedList<Integer> l2 = new LinkedList<Integer>();
+        LinkedList<Integer> l2 = new LinkedList<>();
         l2.add(1);
         l2.add(3);
         l2.add(4);
@@ -23,18 +23,18 @@ public class MergeTwoSortedLists {
     }
 // need to update
     public static List mergeSortedList(LinkedList<Integer> l1, LinkedList<Integer> l2){
-        List<Integer> out = new LinkedList<>();
         for(int i=0;i< l1.size();i++){
-            if(l1.get(i)<l2.get(i)){
-
-            }else if(l1.get(i).equals(l2.get(i))){
-                l1.add(i, l2.get(i));
-                l1.remove(i);
-            }else{
-                l1.add(i-1, l2.get(i));
-                l1.remove(i);
+            for(int j=0;j<l2.size();j++){
+                if(l1.get(i)<l2.get(j)){
+                    break;
+                }else {
+                    l1.add(i, l2.get(j));
+                    l2.remove(j);
+                }
             }
+
         }
-        return out;
+
+        return l1;
     }
 }
