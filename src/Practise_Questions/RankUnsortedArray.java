@@ -6,8 +6,9 @@ import java.util.TreeSet;
 public class RankUnsortedArray {
 
     public static void main(String[] args) {
-        int[] inp = {12, 3, 6, 6, 20};//=>3,1,2,2,4
-        int[] out = giveRankUsingSet(inp);
+        int[] inp = {12, 3, 6, 5, 20};//=>3,1,2,2,4
+//        int[] out = giveRankUsingSet(inp);
+        int[] out = giveRank(inp);
         for(int n:out){
             System.out.println(n);
         }
@@ -15,24 +16,17 @@ public class RankUnsortedArray {
 
     public static int[] giveRank(int[] inp) {//need to be fixed for duplicates
         int[] out = new int[inp.length];
-        int count1=0;
-        int count2=0;
+        int count=1;
+        int duplicateCount = 0;
         for(int i=0;i<inp.length;i++){
             for(int j = 0;j<inp.length;j++){
-                if(j!= i){
-                    if(inp[i]>inp[j]){
-                        count1++;
-                    }
-                    if(inp[i]==inp[j]){
-                        count2++;
-
-                    }
+                if(inp[i]>inp[j] && j!= i){
+                    count++;
                 }
 
             }
-            out[i]=count1+(count2-1)/2;
-            count1=0;
-            count2=0;
+            out[i]=count;
+            count=1;
         }
 
         return out;
