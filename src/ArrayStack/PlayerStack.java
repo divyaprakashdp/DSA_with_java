@@ -10,7 +10,7 @@ public class PlayerStack {
 
     public void push(Player player){
         if(top == stack.length){
-            // need to resize the array
+            // need to resize the array test
             stack = new Player[2*stack.length];
         }
 
