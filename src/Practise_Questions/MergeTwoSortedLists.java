@@ -3,6 +3,14 @@ package Practise_Questions;
 import java.util.LinkedList;
 import java.util.List;
 
+class ListNode {
+      int val;
+      ListNode next;
+      ListNode() {}
+      ListNode(int val) { this.val = val; }
+      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+  }
+
 public class MergeTwoSortedLists {
 
     public static void main(String[] args) {
@@ -35,6 +43,19 @@ public class MergeTwoSortedLists {
 
         }
 
+        return l1;
+    }
+// need to update
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        while(l1.next!=null && l2.next != null ){
+            if(l1.val<l2.val){
+                break;
+            }else {
+                l1.val=l2.val;
+
+            }
+
+        }
         return l1;
     }
 }

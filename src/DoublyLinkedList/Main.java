@@ -9,15 +9,18 @@ public class Main {
         Employee mikeWilson = new Employee("mike","Wilson", 4489);
         Employee lastEmployee = new Employee("Liam","Wilson", 4989);
 
+        Employee newEmp = new Employee("John","Snow", 8977);
         EmployeeDoublyLinkedList list = new EmployeeDoublyLinkedList();
         list.addToFront(janeJones);
         list.addToFront(johnDoe);
         list.addToFront(marySmith);
         list.addToFront(mikeWilson);
 
-        list.addToTail(lastEmployee);
+        list.addBefore(newEmp, marySmith);
 
-        list.removeFromFront();
+//        list.addToTail(lastEmployee);
+
+//        list.removeFromFront();
         list.printList();
         System.out.println(list.getSize());
         System.out.println(list.isEmpty());
