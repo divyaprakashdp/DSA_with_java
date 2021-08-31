@@ -1,5 +1,7 @@
 package ArrayStack;
 
+import java.util.EmptyStackException;
+
 public class PlayerStack {
     private Player[] stack;
     private int top;
@@ -11,11 +13,14 @@ public class PlayerStack {
     public void push(Player player){
         if(top == stack.length){
             // need to resize the array test
-            stack = new Player[2*stack.length];
+            Player[] newStack = new Player[2*stack.length];
+            System.arraycopy(stack, 0, newStack, 0, stack.length);
+            stack = newStack;
         }
 
         stack[top] = player;
         top++;
+        //or stack[top++] = player; =>O(1)
 
     }
 
@@ -24,23 +29,24 @@ public class PlayerStack {
     }
 
     public boolean isEmpty(){
-        return stack.length<=0;
+        return top==0;
     }
 
     public Player peek(){
-        if(stack.length==0){
-            return null;
+        if(isEmpty()){
+            throw new EmptyStackException();
         }else{
             return stack[top-1];
         }
     }
 
-    public void pop(){
-        if(stack.length==0) {
-            System.out.println("Stack is empty");
+    public Player pop(){
+        if(isEmpty()){
+            throw new EmptyStackException();
         }
-         System.arraycopy(stack,1,stack,0,stack.length-1);
-         top--;
+        Player player = stack[--top];
+        stack[top] = null;
+         return player;
     }
 
     public void printStack(){

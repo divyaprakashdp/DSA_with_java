@@ -8,7 +8,7 @@ public class Main {
         Player second = new Player("Sham", 19);
         Player third = new Player("Babu", 190);
         Player fourth = new Player("Devi", 90);
-        PlayerStack playerStack = new PlayerStack(6);
+        PlayerStack playerStack = new PlayerStack(2);
 
         playerStack.push(first);
         playerStack.push(second);
