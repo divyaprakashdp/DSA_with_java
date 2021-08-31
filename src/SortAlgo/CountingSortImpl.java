@@ -1,3 +1,5 @@
+package SortAlgo;
+
 public class CountingSortImpl {
     public static void main(String[] args) {
         int[] array = {2, 5, 9,8,2,8,7,10,4,3};
@@ -10,8 +12,8 @@ public class CountingSortImpl {
 
     public static void countingsort(int[] array, int min, int max){
         int[] temp= new int[max-min+1];
-        for(int i = 0;i<array.length;i++){
-            int index = array[i]-min;
+        for (int k : array) {
+            int index = k - min;
             temp[index]++;
         }
         int j=0;

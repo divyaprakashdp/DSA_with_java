@@ -1,18 +1,23 @@
-public class BubbleSortImpl {
+package SortAlgo;
+
+public class SelectionSortImpl {
     public static void main(String[] args) {
         int[] array = {20, 35, -15, 7, 55, 1, -22};
-        for(int lastunsortedIndex = array.length-1; lastunsortedIndex>0; lastunsortedIndex--){
-            for(int i=0; i<array.length-1;i++){
-                if(compare(array, i)){
-                    swap(array, i, i+1);
+
+        int lastUnsortedIndex;
+        for(lastUnsortedIndex=array.length-1;lastUnsortedIndex>0;lastUnsortedIndex--){
+            int largest=0;
+            for(int i=1;i<=lastUnsortedIndex;i++){
+                if(array[i] > array[largest]){
+                    largest = i;
                 }
             }
+            swap(array, largest, lastUnsortedIndex);
         }
 
         for(int n:array){
             System.out.println(n);
         }
-
     }
 
     public static void swap(int[] array, int i, int j){
@@ -24,9 +29,4 @@ public class BubbleSortImpl {
         array[i] = array[j];
         array[j] = temp;
     }
-    public static boolean compare(int[] array, int i){
-        return array[i] > array[i + 1];
-    }
-
-
 }

@@ -46,7 +46,7 @@ public class PlayerStack {
         }
         Player player = stack[--top];
         stack[top] = null;
-         return player;
+        return player;
     }
 
     public void printStack(){

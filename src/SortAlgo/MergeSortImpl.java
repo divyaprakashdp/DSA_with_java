@@ -1,11 +1,13 @@
+package SortAlgo;
+
 public class MergeSortImpl {
     public static void main(String[] args) {
         int[] array = {20, 35, -15, 7, 55, 1, -22};
 
         mergesort(array, 0, array.length);
 
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+        for (int j : array) {
+            System.out.println(j);
         }
     }
 

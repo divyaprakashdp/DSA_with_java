@@ -1,3 +1,5 @@
+package SortAlgo;
+
 public class QuickSortImpl {
     public static void main(String[] args) {
         int[] array = {20, 35, -15, 7, 55, 1, -22};
