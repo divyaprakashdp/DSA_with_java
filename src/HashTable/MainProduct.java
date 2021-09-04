@@ -2,7 +2,7 @@ package HashTable;
 
 public class MainProduct {
     public static void main(String[] args) {
-        Products product1 = new Products("Milk", "Milk", 20);
+        Products product1 = new Products("TonedMilk", "Milk", 20);
         Products product2 = new Products("Curd", "Curd", 22);
         Products product3 = new Products("Butter", "Butter", 60);
 
@@ -12,5 +12,7 @@ public class MainProduct {
         hashTable.put(product2.getID(), product2);
 
         hashTable.printHashTable();
+
+        System.out.println(hashTable.get("Curd"));
     }
 }
