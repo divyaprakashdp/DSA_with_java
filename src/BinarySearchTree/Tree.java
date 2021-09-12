@@ -17,4 +17,11 @@ public class Tree {
             root.traverseInOrder();
         }
     }
+
+    public TreeNode get(int input){
+        if (root != null){
+            return root.get(input);
+        }
+        return null;
+    }
 }

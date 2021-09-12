@@ -41,6 +41,23 @@ public class TreeNode {
         }
     }
 
+    public TreeNode get(int input){
+        if(input == data){
+            return this;
+        }
+
+        if(input<data){
+            if(leftChild != null){
+                return leftChild.get(input);
+            }
+        }else{
+            if(rightChild != null){
+                return rightChild.get(input);
+            }
+        }
+        return null;
+    }
+
     public int getData() {
         return data;
     }
