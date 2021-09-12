@@ -10,10 +10,13 @@ public class Main {
         intTree.insert(12);
         intTree.insert(9);
 
-        intTree.traverseInOrder();
+//        intTree.traverseInOrder();
+//
+//        System.out.println(intTree.get(7).getData());
+//        System.out.println(intTree.get(17).getData());
 
-        System.out.println(intTree.get(7).getData());
-        System.out.println(intTree.get(17).getData());
+        System.out.println(intTree.max());
+        System.out.println(intTree.min());
 
     }
 }
