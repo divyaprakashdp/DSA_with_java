@@ -25,6 +25,14 @@ public class Tree {
         return null;
     }
 
+    public void delete(int value){
+        root = delete(root, value);
+    }
+
+    private TreeNode delete(TreeNode subTreeRoot, int value){
+        return subTreeRoot;
+    }
+
     public int max(){
         if(root == null){
             return Integer.MAX_VALUE;
