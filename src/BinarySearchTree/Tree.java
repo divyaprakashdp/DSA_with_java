@@ -30,7 +30,24 @@ public class Tree {
     }
 
     private TreeNode delete(TreeNode subTreeRoot, int value){
+        if(subTreeRoot == null){
+            return null;
+        }
+
+        if(value<subTreeRoot.getData()){
+            subTreeRoot.setLeftChild(delete(subTreeRoot.getLeftChild(),value));
+        }else if(value>subTreeRoot.getData()){
+            subTreeRoot.setRightChild(delete(subTreeRoot.getRightChild(),value));
+        }else{
+            if(subTreeRoot.getLeftChild()==null){
+                return subTreeRoot.getRightChild();
+            }else{
+                return subTreeRoot.getLeftChild();
+            }
+        }
+
         return subTreeRoot;
+
     }
 
     public int max(){
