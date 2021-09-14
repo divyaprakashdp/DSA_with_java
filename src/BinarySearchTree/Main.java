@@ -22,5 +22,9 @@ public class Main {
         System.out.println(intTree.max());
         System.out.println(intTree.min());
 
+        System.out.println("###########################");
+
+        intTree.traversePreOrder();
+
     }
 }
