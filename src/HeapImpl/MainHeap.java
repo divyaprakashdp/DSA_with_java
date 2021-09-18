@@ -2,7 +2,7 @@ package HeapImpl;
 
 public class MainHeap {
     public static void main(String[] args) {
-        MaxHeap heap = new MaxHeap(10);
+        MaxHeap heap = new MaxHeap(8);
         heap.insert(80);
         heap.insert(75);
         heap.insert(68);
@@ -12,10 +12,14 @@ public class MainHeap {
         heap.insert(67);
 
         heap.printHeap();
+        System.out.println("###########################");
 
         heap.delete(1);
 
         heap.printHeap();
+        System.out.println("###########################");
+
+        System.out.println(heap.peek());
     }
 
 }

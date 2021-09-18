@@ -94,6 +94,13 @@ public class MaxHeap {
         return (index-1)/2;
     }
 
+    public int peek(){
+        if(isEmpty()){
+            throw new IndexOutOfBoundsException("Heap is empty");
+        }
+        return heap[0];
+    }
+
     public void printHeap(){
         for (int i:heap){
             System.out.println(i);
