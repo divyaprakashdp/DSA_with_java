@@ -13,13 +13,17 @@ public class MainHeap {
 
         heap.printHeap();
         System.out.println("###########################");
+//
+//        heap.delete(1);
+//
+//        heap.printHeap();
+//        System.out.println("###########################");
+//
+//        System.out.println(heap.peek());
+//        System.out.println("###########################");
 
-        heap.delete(1);
-
+        heap.sort();
         heap.printHeap();
-        System.out.println("###########################");
-
-        System.out.println(heap.peek());
     }
 
 }
