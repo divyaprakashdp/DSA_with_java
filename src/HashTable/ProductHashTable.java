@@ -1,10 +1,10 @@
 package HashTable;
 
 public class ProductHashTable {
-    private Products[] hashTable;
+    private StoredProduct[] hashTable;
 
     public ProductHashTable() {
-        hashTable = new Products[31];
+        hashTable = new StoredProduct[31];
     }
 
     private boolean occupied(int index){
@@ -19,8 +19,9 @@ public class ProductHashTable {
     public void put(String key, Products product){
         int hashedKey = hashKey(key);
         if(occupied(hashedKey)){
+            //linear probing
             int stopIndex = hashedKey;
-            if(hashedKey == hashTable.length){
+            if(hashedKey == hashTable.length-1){
                 hashedKey = 0;
             }else{
                 hashedKey++;
@@ -33,18 +34,54 @@ public class ProductHashTable {
         if(hashTable[hashedKey] != null){
             System.out.println("There's already a product at position "+hashedKey);
         }else{
-            hashTable[hashedKey] = product;
+            hashTable[hashedKey] = new StoredProduct(key, product);
         }
     }
 
     public Products get(String key){
+        int hashedKey = findKey(key);
+        if(hashedKey == -1){
+            return null;
+        }else{
+            return hashTable[hashedKey].product;
+        }
+
+    }
+
+    private int findKey(String key){
         int hashedKey = hashKey(key);
-        return hashTable[hashedKey];
+        if (hashTable[hashedKey] != null && hashTable[hashedKey].key.equals(key)){
+            return  hashedKey;
+        }
+
+        //linear probing
+        int stopIndex = hashedKey;
+        if(hashedKey == hashTable.length-1){
+            hashedKey = 0;
+        }else{
+            hashedKey++;
+        }
+
+        while(hashedKey != stopIndex && hashTable[hashedKey] != null &&
+                !hashTable[hashedKey].key.equals(key)){
+            hashedKey = (hashedKey+1) % hashTable.length;
+        }
+
+        if (stopIndex == hashedKey){
+            return -1;
+        }else{
+            return hashedKey;
+        }
     }
 
     public void printHashTable(){
-        for (Products products : hashTable) {
-            System.out.println(products);
+        for (StoredProduct products : hashTable) {
+            if(products == null){
+                System.out.println("empty");
+            }else{
+                System.out.println(products.product);
+            }
+
         }
     }
 }
