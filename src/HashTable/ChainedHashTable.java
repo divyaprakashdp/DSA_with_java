@@ -36,7 +36,7 @@ public class ChainedHashTable {
         int hashedKey = hashKey(key);
         ListIterator<StoredProduct> itr = hashTable[hashedKey].listIterator();
         StoredProduct product = null;
-        int index = 0;
+        int index = -1;
         while(itr.hasNext()){
             product = itr.next();
             index++;
