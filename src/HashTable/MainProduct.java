@@ -15,5 +15,9 @@ public class MainProduct {
         hashTable.printHashTable();
 
         System.out.println(hashTable.get("Curd"));
+
+        System.out.println(hashTable.remove("Butter"));
+        System.out.println("###################################");
+        hashTable.printHashTable();
     }
 }

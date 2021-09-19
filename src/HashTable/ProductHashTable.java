@@ -48,6 +48,18 @@ public class ProductHashTable {
 
     }
 
+    public Products remove(String key){
+        int hashedKey = findKey(key);
+        if(hashedKey == -1){
+            return null;
+        }else{
+            Products product = hashTable[hashedKey].product;
+            hashTable[hashedKey] = null;
+            return product;
+        }
+
+    }
+
     private int findKey(String key){
         int hashedKey = hashKey(key);
         if (hashTable[hashedKey] != null && hashTable[hashedKey].key.equals(key)){
@@ -67,10 +79,10 @@ public class ProductHashTable {
             hashedKey = (hashedKey+1) % hashTable.length;
         }
 
-        if (stopIndex == hashedKey){
-            return -1;
-        }else{
+        if(hashTable[hashedKey] != null && hashTable[hashedKey].key.equals(key)){
             return hashedKey;
+        }else{
+            return -1;
         }
     }
 
