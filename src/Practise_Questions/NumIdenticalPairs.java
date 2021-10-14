@@ -1,5 +1,9 @@
 package Practise_Questions;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
 public class NumIdenticalPairs {
 
     public static void main(String[] args) {
@@ -12,13 +16,15 @@ public class NumIdenticalPairs {
         int out =0;
         for(int i=0;i< nums.length;i++){
             for(int j=i+1;j<nums.length;j++){
-
                 if(nums[i]==nums[j]){
                     out++;
-
                 }
             }
         }
         return out;
     }
+
+//    public static int newNumIdenticalPairs(int[] nums){
+//
+//    }
 }
