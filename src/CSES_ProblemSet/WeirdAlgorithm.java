@@ -27,12 +27,7 @@ Output:
 
 import java.util.ArrayList;
 
-public class WeirdProblem {
-    public static void main(String[] args) {
-        for(int n:weirdAlgo(3)){
-            System.out.println(n);
-        }
-    }
+public class WeirdAlgorithm {
 
     public static ArrayList<Integer> weirdAlgo(int n){
         ArrayList<Integer> output = new ArrayList<>();
