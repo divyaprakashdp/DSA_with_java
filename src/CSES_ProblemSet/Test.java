@@ -8,8 +8,8 @@ public class Test {
 //        for(int n: WeirdAlgorithm.weirdAlgo(3)){
 //            System.out.println(n);
 //        }
-        System.out.println(MissingNumber.missingNum(5, new int[]{1, 2, 3, 5}));
-
+//        System.out.println(MissingNumber.missingNum(5, new int[]{1, 2, 3, 5}));
+        System.out.println(Repetitions.repetitions("ATTCGGGGAAA"));
 
 
     }
