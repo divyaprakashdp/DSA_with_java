@@ -8,6 +8,7 @@ public class Array_2D {
         ArrayList<ArrayList<Integer>> B = new ArrayList<ArrayList<Integer>>();
         for (int i = 0; i < A.size(); i++) {
             B.add(new ArrayList<Integer>());
+            B.contains(8);
 
             for (int j = 0; j < A.get(i).size(); j++) {
                 B.get(i).add(0);
@@ -15,6 +16,7 @@ public class Array_2D {
 
             for (int j = 0; j < A.get(i).size(); j++) {
                 B.get(i).set(A.get(i).size() - 1 - j, A.get(i).get(j));
+                B.contains(0);
             }
         }
         return B;
