@@ -23,5 +23,7 @@ public class ArrayBug {
         A.add(6);
         System.out.println(rotateArray(A, 1));
 
+        System.out.println(4%4);
+
     }
 }
