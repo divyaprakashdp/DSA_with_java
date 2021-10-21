@@ -7,31 +7,28 @@ import java.util.LinkedHashMap;
 public class MaxNonNegativeSubArray {
 //    to be revisited, not a complete solution
     public static ArrayList<Integer> maxset(ArrayList<Integer> A) {
-        ArrayList<Integer> out = new ArrayList<>();
-        ArrayList<Integer> indexes = new ArrayList<>();
-        HashMap<Integer, ArrayList<Integer>> maxIndexMap = new LinkedHashMap<>();
+        ArrayList<Integer> newArray = new ArrayList<>();
+        ArrayList<Integer> maxArray = new ArrayList<>();
         int globalMax=0;
         int localMax=0;
-        for(int i=0;i<A.size();i++){
+        for (Integer integer : A) {
 
-            if(A.get(i)>0){
-                localMax += A.get(i);
-                indexes.add(i);
-            }else{
+            if (integer > 0) {
+                localMax += integer;
+                newArray.add(integer);
+
+            } else {
                 localMax = 0;
-                indexes.clear();
+                newArray = new ArrayList<>();
             }
 
-            if(localMax>globalMax){
-                globalMax=localMax;
-                maxIndexMap.put(globalMax, indexes);
+            if ((globalMax < localMax) || ((globalMax == localMax) && (newArray.size() > maxArray.size()))) {
+                globalMax = localMax;
+                maxArray = newArray;
             }
-
-
         }
-        out = maxIndexMap.get(globalMax);
 
-        return A.subList(out.get(0), out.size());
+        return maxArray;
     }
 
     public static void main(String[] args) {
