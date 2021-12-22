@@ -17,13 +17,26 @@ Note: You can return the array with its elements in any order.
     }
 
     public static void diffArray(int[] arr1, int[] arr2){
-        Set<Integer> listOfNum = new LinkedHashSet<>();
+        Set<Integer> listOfNum1 = new LinkedHashSet<>();
+        Set<Integer> listOfNum2 = new LinkedHashSet<>();
         for (int j : arr1) {
-            listOfNum.add(j);
+            listOfNum1.add(j);
         }
         for (int j : arr2) {
-            listOfNum.add(j);
+            listOfNum2.add(j);
         }
-        System.out.println(listOfNum);
+        System.out.println(listOfNum1);
+        for (int j : arr2) {
+            if (!listOfNum1.contains(j)) {
+                System.out.println(j);
+
+            }
+        }
+        for (int j : arr1) {
+            if (!listOfNum2.contains(j)) {
+                System.out.println(j);
+
+            }
+        }
     }
 }
