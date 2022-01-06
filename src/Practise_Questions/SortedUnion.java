@@ -3,6 +3,7 @@ package Practise_Questions;
 all values present from all arrays should be included in their original order, but with no duplicates in the final array
 
  */
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
