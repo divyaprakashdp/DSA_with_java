@@ -1,0 +1,109 @@
+package codesdope.com;
+
+import java.util.Scanner;
+
+public class Char_And_String {
+    /* Questions from https://www.codesdope.com/practice/java-characters-and-string/ */
+
+    //Write a program to print a string entered by user.
+    public static void question1(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string");
+        String out = sc.next();
+        System.out.println(out);
+    }
+
+    //Write a program to input and display the sentence I love candies.
+    public static void question2(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Sentence");
+        String out = sc.next();
+        System.out.println(out);
+    }
+
+    //Write a program to find the length of the string "refrigerator".
+    public static void question3(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the word to get the length");
+        String out = sc.next();
+        System.out.println(out.length());
+    }
+
+    //Write a program to check if the letter 'e' is present in the word 'Umbrella'.
+    public static void question4(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the sentence");
+        String word = sc.nextLine();
+        System.out.println("Enter the char");
+        String input = sc.nextLine();
+        boolean out = word.contains(input);
+        System.out.println(out);
+    }
+
+    //Write a program to check if the word 'orange' is present in the "This is orange juice".
+    public static void question5(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the sentence");
+        String word = sc.nextLine();
+        System.out.println("Enter the word");
+        String input = sc.nextLine();
+        boolean out = word.contains(input);
+        System.out.println(out);
+    }
+
+    //Write a program to find the first and the last occurence of the letter 'o' and character ',' in "Hello, World".
+    public static void question6(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string");
+        String word = sc.nextLine();
+        System.out.println("Enter a char");
+        String character = sc.nextLine();
+        int index = 0;
+        for(char c:word.toCharArray()){
+            index++;
+            if(c==character.charAt(0)){
+                System.out.println("First index of the char - "+index);
+                break;
+            }
+        }
+
+        for(int last=word.length()-1;last>=0;last--){
+
+            if(character.charAt(0)==word.charAt(last)){
+                System.out.println("Last index of the char - "+last);
+                break;
+            }
+        }
+    }
+
+    /*
+    Write a program that takes your full name as input and
+    displays the abbreviations of the first and
+    middle names except the last name
+    which is displayed as it is.
+    For example, if your name is Robert Brett Roser,
+    then the output should be R.B.Roser.
+    */
+    public static void question7(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your full name");
+        String fullName = sc.nextLine();
+        String[] fullNameArray = fullName.split(" ");
+        int nameLength = fullNameArray.length;
+        String name = "";
+        for(int i=0;i<nameLength-1;i++){
+            name += fullNameArray[i].charAt(0)+". ";
+        }
+        name += fullNameArray[nameLength-1];
+        System.out.println(name);
+    }
+
+    //Write a program to find the number of vowels, consonents, digits and white space characters in a string.
+    public static void question8(){
+        String[] vowels = {"a", "e", "i", "o", "u"};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter String");
+        String fullName = sc.nextLine();
+
+    }
+}
