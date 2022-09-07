@@ -1,6 +1,6 @@
 package codesdope.com;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Char_And_String {
     /* Questions from https://www.codesdope.com/practice/java-characters-and-string/ */
@@ -98,12 +98,43 @@ public class Char_And_String {
         System.out.println(name);
     }
 
-    //Write a program to find the number of vowels, consonents, digits and white space characters in a string.
+    //Write a program to find the number of vowels, consonants, digits and white space characters in a string.
     public static void question8(){
-        String[] vowels = {"a", "e", "i", "o", "u"};
+        Set<Character> vowelArr = new HashSet<>();
+
+        vowelArr.add('a');
+        vowelArr.add('e');
+        vowelArr.add('i');
+        vowelArr.add('o');
+        vowelArr.add('u');
+        int countOfVowel = 0;
+        int countOfConsonant = 0;
+        int countOfDigits = 0;
+        int countOfWhiteSpace = 0;
+        HashMap<String, Integer> result = new HashMap<>();
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter String");
         String fullName = sc.nextLine();
+        for(char c:fullName.toCharArray()){
+            if(Character.isLetter(c)){
+                if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u'){
+                    countOfVowel++;
+                }else{
+                    countOfConsonant++;
+                }
+                
+            }else if(Character.isWhitespace(c)){
+                countOfWhiteSpace++;
+            } else if (Character.isDigit(c)) {
+                countOfDigits++;
+            }
+        }
+        result.put("vowel", countOfVowel);
+        result.put("consonant", countOfConsonant);
+        result.put("digits", countOfDigits);
+        result.put("white_space", countOfWhiteSpace);
+        result.forEach((k,v)->System.out.println(k+":"+v));
 
     }
 }
