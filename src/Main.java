@@ -12,7 +12,8 @@ public class Main {
 //        Char_And_String.question6();
 //        Char_And_String.question7();
 //        Char_And_String.question8();
-        Char_And_String.question9();
+//        Char_And_String.question9();
+        Char_And_String.question10();
     }
 
 }

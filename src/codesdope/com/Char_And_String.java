@@ -151,5 +151,22 @@ public class Char_And_String {
         }
         String result = textArray.stream().map(Object::toString).collect(Collectors.joining());
         System.out.println(result);
+
+    }
+
+    //Input a string of alphabets. Find out the number of occurrence of all alphabets in that string. Find out the alphabet with maximum occurrence.
+    public static void question10(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter String");
+        String text = sc.nextLine();
+        Map<String, Integer> result = new HashMap<>();
+        for(String letter:text.split("")){
+            if(!result.containsKey(letter)){
+                result.put(letter, 1);
+            }else{
+                result.put(letter,result.get(letter)+1);
+            }
+        }
+        result.forEach((k,v)->System.out.println(k+":"+v));
     }
 }
