@@ -1,13 +1,11 @@
 package RevisionCodes;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class JavaCollections {
     public static void main(String[] args) {
-        demoArrayList();
+//        demoArrayList();
+        demoLinkedList();
     }
 
     public static void demoArrayList(){
@@ -43,6 +41,37 @@ public class JavaCollections {
     }
 
     public static  void demoLinkedList(){
+        LinkedList<String> nameList = new LinkedList<>();
+
+        nameList.add("Ramesh");
+        nameList.add("Suresh");
+        nameList.add("Mahesh");
+        nameList.add("Naresh");
+        nameList.add("Devesh");
+
+        System.out.println(nameList);
+
+//        LinkedList<String> moreNameList = new LinkedList<>(nameList); //Parameterized constructor call
+        LinkedList<String> moreNameList = new LinkedList<>();
+        moreNameList.addAll(nameList);
+        moreNameList.add("Balwant");
+        moreNameList.add("Satwant");
+
+        System.out.println(moreNameList);
+
+        moreNameList.remove("Suresh");
+        moreNameList.addFirst("Ram");
+        moreNameList.addLast("Laxman");
+
+        System.out.println(moreNameList);
+
+        Object copiedList = moreNameList.clone();
+        System.out.println("Copied List ==> "+copiedList);
+
+        System.out.println("Is the object present in list ==> "+ moreNameList.contains("Suresh"));
+
+        System.out.println("item at index 0 ==>"+ moreNameList.get(0));
+
 
     }
 
